@@ -1,0 +1,32 @@
+{
+	"name": "udarajay/dunbar",
+	"description": "Easy to use proxy for your Laravel APIs",
+	"keywords": ["laravel", "proxy", "oauth", "passport", "API"],
+	"authors": [
+		{
+			"name": "Udara Jay",
+			"email": "me@udara.io"
+		}
+	],
+	"require": {
+        "php": ">=7.0.0",
+        "guzzlehttp/guzzle": "~6.0",
+        "illuminate/support": "~5.6.0|~5.7.0|~5.8.0|^6.0|^7.0"
+    },
+	"extra": {
+        "laravel": {
+            "providers": [
+                "UdaraJay\\Dunbar\\DunbarServiceProvider"
+			],
+			"aliases": {
+				"Dunbar": "UdaraJay\\Dunbar\\DunbarFacade"
+			}
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "UdaraJay\\Dunbar\\": "src/"
+        }
+    },
+	"license": "MIT"
+}
