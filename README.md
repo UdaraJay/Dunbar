@@ -1,7 +1,14 @@
 <p align="center"><img src="public/image/dunbar.webp" width="100"></p>
 <p align="center">
-<h2 align="center">Dunbar</h2>
+<h1 align="center">Dunbar</h1>
 <h3 align="center">Easy to use (thin) proxy for your Laravel APIs.</h3>
+<p align="center">
+
+[![Latest Stable Version](https://poser.pugx.org/udarajay/dunbar/version)](https://packagist.org/packages/udarajay/dunbar)
+[![Total Downloads](https://poser.pugx.org/udarajay/dunbar/downloads)](https://packagist.org/packages/udarajay/dunbar)
+[![License](https://poser.pugx.org/udarajay/dunbar/license)](https://packagist.org/packages/udarajay/dunbar)
+
+</p>
 
 If you're consuming your Laravel API from any public client, like a single-page web app or a mobile/desktop app, chances are you're going to have to store the client-secret credentails somewhere in there. It's super easy for anyone to inspect you code and grab your secure tokens. 
 
