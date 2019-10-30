@@ -10,9 +10,9 @@
 
 </p>
 
-If you're consuming your Laravel API from any public client, like a single-page web app or a mobile/desktop app, chances are you're going to have to store the client-secret credentails somewhere in there. It's super easy for anyone to inspect you code and grab your secure tokens. 
+If you're consuming your Laravel API from any public client, like a single-page web app or a mobile/desktop app, chances are you're going to have to store the `client-secret` credentials somewhere in there. It's super easy for anyone to inspect you code and grab your secure tokens. 
 
-Using a 'thin' (server-side) proxy is the fastest way to secure your client APIs; simply put, this poxy will sit between your frontend clients and backend apis. Where you would normally make an authentication call to the API with a client-id and client-secret like so:
+Using a 'thin' (server-side) proxy is the fastest way to secure your client APIs; simply put, this poxy will sit between your frontend clients and backend apis. Where you would normally make an authentication call to the API with a `client-id` and `client-secret` like so:
 
 ```http
 POST /auth HTTP/1.1
@@ -25,20 +25,20 @@ grant_type=password
 &password=password
 ```
 
-You'd now be making the same API call to the proxy endpoint, in our case `example.com/dunbar`, **minus the client-secret**. The proxy will take the request, add the client-secret and forward the request to your backend API. 
+You'd now be making the same API call to the proxy endpoint, in our case `example.com/dunbar`, **minus the client-secret**. The proxy will take the request, add the `client-secret` and forward the request to your backend API. 
 
 The server would **normally** respond with the access tokens and refresh tokens like so:
 
 ```json
 {
-    "access_token": "DDSHs55zpG51Mtxnt6H8vwn5fVJ230dF",
-    "refresh_token": "24QmIt2aV1ubaenB2D6G0se5pFRk4W05",
+    "access_token": "Jcncdj32CXdsdiUYtxnt6H8vCjndiCbdsu",
+    "refresh_token": "83JCd97cdkalc53nB2DHJui3d83NcdicS",
     "token_type": "Bearer",
-    "expires": 1415741799
+    "expires": 1535645629
 }
 ```
 
-But with our thin proxy, it'll simply create an encrypted cookies that only the proxy and decrypt. That's it. Simple.
+But with our thin proxy, it'll simply create an encrypted cookie that only the proxy can decrypt.
 
 Now, for all future call to the API: 
 ```http
@@ -55,11 +55,11 @@ Authorization: Bearer the-access-token-form-the-cookie
 Host: api.example.com
 ```
 
-The responses will be passed direclly back to the browser or app exactly like you define in your API.
+The responses will be passed directly back to the browser or app exactly like you define in your API.
 
 
 ### So what exactly does this "thin" proxy do?
-Simply put, the proxy lets you hard code the client-secret credentials into this thin server-side component (proxy) that you can trust. It authenticates your client APIs for you and returns an encrypted cookies with the user credentials (eg. access token) that only the proxy can decrypt. All you need to do to access protected resources after you've authenticated via the proxy is to pass this cookie with all your calls. 
+Simply put, the proxy lets you hard code the client-secret credentials into this thin server-side component (proxy) that you can trust. It authenticates your client APIs for you and returns an encrypted cookie with the user credentials (eg. access token) that only the proxy can decrypt. All you need to do to access protected resources after you've authenticated via the proxy is to pass this cookie with all your calls. 
 
 ### What more? 
 Teh further secure your API, you can lock it down to only accept requests from the proxy. Additionally you can also roll your client-secret on a schedule or anytime you need to without having to update any front-end clients. 
