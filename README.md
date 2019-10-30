@@ -12,8 +12,6 @@
 
 If you're consuming your Laravel API from any public client, like a single-page web app or a mobile/desktop app, chances are you're going to have to store the client-secret credentails somewhere in there. It's super easy for anyone to inspect you code and grab your secure tokens. 
 
-In the event of a leak, resetting your secrets means having to update client code. All-in-all, annoying. 
-
 Using a 'thin' (server-side) proxy is the fastest way to secure your client APIs; simply put, this poxy will sit between your frontend clients and backend apis. Where you would normally make an authentication call to the API with a client-id and client-secret like so:
 
 ```http
@@ -71,7 +69,7 @@ Teh further secure your API, you can lock it down to only accept requests from t
 1. Install `Dunbar` via composer
 
 ```
-composer require UdaraJay/Dunbar
+composer require udarajay/dunbar
 ```
 2. Publish the configuration
 ```
