@@ -112,8 +112,9 @@ If the `access_token` expires and you have got a `refresh_token`, `Dunbar` will 
 Create an issue and tag it with `question`. I'll try to help & answer best I can. 
 
 ## Contribute? 
-Please do :). Just create a PR.
+Please do :)
+Just create a PR.
 
-## License & Credits
+## License
 
 This package is released under the MIT License. 
